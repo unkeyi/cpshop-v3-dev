@@ -1,4 +1,3 @@
-import { message } from 'ant-design-vue/es';
 import axios, { type AxiosRequestConfig } from 'axios';
 // 待优化为env环境地址配置（测试/生产）
 export const BASE_URL = 'http://localhost:8081'
@@ -21,10 +20,10 @@ request.interceptors.response.use((response) => {
     // 处理请求响应(成功/失败/...)---这里需要与后端设置的code配置进行联调
     const data = response.data
     if(data.code === 50001) {
-        message.error(data.message || '')
+        // message.error(data.message || '')
         // dosomething
     } else if(data.code !== 0) {
-        message.error(data.msg)
+        // message.error(data.msg)
         // dosomething
     }
     return response;

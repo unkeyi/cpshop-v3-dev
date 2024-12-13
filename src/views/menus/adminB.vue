@@ -7,10 +7,10 @@ export default defineComponent({
   name: "classDemo",
   setup() {
     // trucksDemo
-    const _data:any = [];
+    const _data: any = [];
     const getTrucks = () => ({
-      _data = api.trucksDemo,
-      console.log('>>>', _data);
+      // _data = api.trucksDemod
+      // console.log('>>>', _data)
     });
     onMounted(() => {
       getTrucks();
@@ -18,5 +18,4 @@ export default defineComponent({
   },
 });
 </script>
-<style scoped>
-</style>
+<style scoped></style>

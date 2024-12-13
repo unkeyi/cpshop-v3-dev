@@ -1,8 +1,5 @@
-# VUE3+Typescript+vite+pinia+axios+AntdV
+# VUE3+Typescript+vite+pinia+axios
 ```
-代码规范：暂无
-Ant Design文档：https://ant.design/components/overview-cn/
-Ant Design Vue文档：https://antdv.com/components/overview
 vite配置-文档：https://vitejs.dev/config/
 ```
 
@@ -12,6 +9,15 @@ vite配置-文档：https://vitejs.dev/config/
 npm run dev
 npm run build
 ```
+````javascript
+// 使用Provide/Inject来代替Vue 2中的this.$parent和this.$children
+
+<script setup>
+import { provide, inject } from 'vue';
+provide('message', 'Hello');  <=> this.$emit('message', 'Hello')')
+const message = inject('message');
+</script>
+````
 
 
 ## 一些比较有可能安装失败的依赖，可进行手动安装👇👇👇

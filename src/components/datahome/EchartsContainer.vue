@@ -2,14 +2,16 @@
 import * as echarts from 'echarts';
 import type { EChartsOption } from 'echarts';
 // 基于准备好的dom，初始化echarts实例
-const echartsContainer = $ref<HTMLElement>()
+const echartsContainer = ref<HTMLElement>()
 
 const { option } = defineProps<{ option: EChartsOption }>()
 
 onMounted(() => {
-  const myChart = echarts.init(echartsContainer!);
+  // 换了方式 需要重新官网
+  // const myChart = echarts.init(echartsContainer!);
+  // const myChart = echarts.init(echartsContainer);
   // 使用刚指定的配置项和数据显示图表。
-  myChart.setOption(option);
+  // myChart.setOption(option);
 })
 </script>
 

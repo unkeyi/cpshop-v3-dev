@@ -1,14 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import index from '../views/index.vue'
+import index from '@/views/layout.vue'
+import datahome from '@/views/datahome.vue'
+import menus from './menus'
+import user from './user'
 
 export const routes = [
   {
     path: '/',
     name: 'home',
     meta: {
-      title: '首页'
+      title: '后台管理'
     },
-    component: index
+    component: index, // 使用布局组件
+    children: [...menus]
   },
   {
     path: '/login',
@@ -19,29 +23,24 @@ export const routes = [
     component: () => import('../views/login.vue')
   },
   {
-    path: '/manager',
-    name: 'manager',
+    path: '/datahome',
+    name: 'datahome',
     meta: {
-      title: '后台管理'
+      title: '地图页'
     },
-    component: () => import('../views/manager.vue')
+    component: datahome
   },
-  {
-    path: '/demo/classDemo',
-    name: 'classDemo',
-    meta: {
-      title: '后台管理'
-    },
-    component: () => import('../views/demo/classDemo.vue')
-  },
+  ...user
 ]
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL), routes
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes
 })
 
-router.beforeEach((to, from) => {
+router.beforeEach((to, from, next) => {
   // const {isLogin} =$(useAuth)
+  next()
 })
 
 export default router

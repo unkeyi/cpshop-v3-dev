@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-let msg = $ref("");
+let msg = ref("");
 onMounted(() => {
-  msg = "away";
+  msg.value = "away";
 });
 </script>
 <template>

@@ -3,6 +3,11 @@
   height: 100vh;
 }
 
+div, view {
+  display: block;
+  box-sizing: border-box;
+}
+
 body::-webkit-scrollbar {
   width: 0;
   height: 0;
